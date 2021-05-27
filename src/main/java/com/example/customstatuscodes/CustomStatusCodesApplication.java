@@ -10,10 +10,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class CustomStatusCodesApplication {
+public class CustomStatusCodesApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
         SpringApplication.run(CustomStatusCodesApplication.class, args);
+    }
+    
+     @Override
+     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+     return application.sources(CustomStatusCodesApplication.class);
     }
 
     @Bean
